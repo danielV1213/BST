@@ -134,15 +134,14 @@ public class BST implements IBST<Empleado> {
             System.out.println(valor);
         }
     }
-    
-    private BST minimo(){
-        if(izdo !=null && !izdo.esVacio()){
+
+    private BST minimo() {
+        if (izdo != null && !izdo.esVacio()) {
             return izdo.minimo();
-        }else{
+        } else {
             return this;
         }
     }
-    
 
     private void eliminarImpl(int id) {
         if (izdo != null && dcho != null) {

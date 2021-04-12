@@ -26,21 +26,24 @@ public class MainEjemploBST {
         Empleado e3 = new Empleado(18, "Santiago", "Ventas", "C55");
         Empleado e4 = new Empleado(33, "Daniel", "Ingeniería", "D64");
         Empleado e5 = new Empleado(64, "David", "Mecatrónica", "A69");
-        Empleado e6 = new Empleado(55, "Alejandro", "Informática", "A98");
-        
+//        Empleado e6 = new Empleado(55, "Alejandro", "Informática", "A98");
+
         BST bst = new BST();
+
 //        System.out.println("¿Está vacío?: "+ bst.esVacio() + ", ¿Es hoja: " + bst.esHoja());
 //        bst.insertar(e1);
-//        System.out.println("¿Está vacío?: "+ bst.esVacio() + ", ¿Es hoja: " + bst.esHoja());
+//        System.out.println("¿Está vacío?: " + bst.esVacio() + ", ¿Es hoja: " + bst.esHoja());
 //        bst.insertar(e2);
-//        System.out.println("¿Está vacío?: "+ bst.esVacio() + ", ¿Es hoja: " + bst.esHoja());
-
-        Arrays.asList(e1, e2, e3, e4, e5, e6).forEach(e -> bst.insertar(e)); //Arreglo para insertar todos los elementos de la
+//        System.out.println("¿Está vacío?: " + bst.esVacio() + ", ¿Es hoja: " + bst.esHoja());
+        Arrays.asList(e1, e2, e3, e4, e5).forEach(e -> bst.insertar(e)); //Arreglo para insertar todos los elementos de la
         //lista en el árbol.
+//        bst.eliminar(20);
 
-        bst.eliminar(20);
-        bst.preOrden();
-
+//        bst.preOrden();
+//        System.out.println(bst.existe(12));
+//        System.out.println(bst.obtener(12));
+//        System.out.println(bst.existe(20));
+//        System.out.println(bst.obtener(20));
 //        bst.inOrden();
 //        bst.postOrden();
     }

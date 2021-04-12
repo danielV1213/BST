@@ -11,18 +11,15 @@ import bst.Base;
  *
  * @author Daniel
  */
-public class Empleado extends Base implements Comparable<Empleado> {
+public class Empleado implements Comparable<Empleado> {
 
     private int id;
 
-    private String nombre;
+    private String nombre;  
 
     private String puesto;
 
     private String despacho;
-
-    public Empleado() {
-    }
 
     public Empleado(int id, String nombre, String puesto, String despacho) {
         this.id = id;
