@@ -109,7 +109,6 @@ public class BST implements IBST<Empleado> {
 
     @Override
     public void inOrden() {
-
         if (valor != null) {
             if (izdo != null) {
                 izdo.inOrden();
