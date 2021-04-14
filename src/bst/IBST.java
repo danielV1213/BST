@@ -23,9 +23,9 @@ public interface IBST<T extends Comparable> {
 
     public String preOrden();
 
-    public void inOrden();
+    public String inOrden();
 
-    public void postOrden();
+    public String postOrden();
 
     public void eliminar(int d);
 

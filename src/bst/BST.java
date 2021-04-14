@@ -20,6 +20,10 @@ public class BST implements IBST<Empleado> {
 
     private BST padre;
 
+    public Empleado getValor() {
+        return valor;
+    }
+
     @Override
     public boolean esVacio() {
         return valor == null;
@@ -95,16 +99,20 @@ public class BST implements IBST<Empleado> {
 
     @Override
     public String preOrden() {
-        String m="";
+        String m = "";
         if (valor != null) {
-            
-            m+=valor.toString()+" ";
+
+            m += valor.toString() + "\n";
             System.out.println(valor);
             if (izdo != null) {
                 izdo.preOrden();
+                String izq = izdo.getValor().toString();
+                m += izq + "\n";
             }
             if (dcho != null) {
-                dcho.preOrden(); 
+                dcho.preOrden();
+                String dere = dcho.getValor().toString();
+                m += dere + "\n";
             }
 
         }
@@ -112,30 +120,44 @@ public class BST implements IBST<Empleado> {
     }
 
     @Override
-    public void inOrden() {
+    public String inOrden() {
+        String m = "";
         if (valor != null) {
             if (izdo != null) {
                 izdo.inOrden();
+                String izq = izdo.getValor().toString();
+                m += izq + "\n";
             }
+            m += valor.toString() + "\n";
             System.out.println(valor);
             if (dcho != null) {
                 dcho.inOrden();//Añadir retorno de una cadena
+                String dere = dcho.getValor().toString();
+                m += dere + "\n";
             }
 
         }
+        return m;
     }
 
     @Override
-    public void postOrden() {
+    public String postOrden() {
+        String m = "";
         if (valor != null) {
             if (izdo != null) {
                 izdo.postOrden();
+                String izq = izdo.getValor().toString();
+                m += izq + "\n";
             }
             if (dcho != null) {
                 dcho.postOrden();
+                String dere = dcho.getValor().toString();
+                m += dere + "\n";
             }
+            m += valor.toString() + "\n";
             System.out.println(valor);//Añadir retorno de una cadena
         }
+        return m;
     }
 
     private BST minimo() {
