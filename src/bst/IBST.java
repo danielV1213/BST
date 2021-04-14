@@ -9,24 +9,24 @@ package bst;
  *
  * @author Daniel
  */
-public interface IBST <T extends Comparable> {
+public interface IBST<T extends Comparable> {
 
-    void insertar(T empl);
+    public void insertar(T empl);
 
-    boolean existe(int id);
+    public boolean existe(int id);
 
-    T obtener(int d);
+    public T obtener(int d);
 
-    boolean esHoja();
+    public boolean esHoja();
 
-    boolean esVacio();
+    public boolean esVacio();
 
-    void preOrden();
+    public String preOrden();
 
-    void inOrden();
+    public void inOrden();
 
-    void postOrden();
+    public void postOrden();
 
-    void eliminar(int d);
+    public void eliminar(int d);
 
 }

@@ -94,17 +94,21 @@ public class BST implements IBST<Empleado> {
     }
 
     @Override
-    public void preOrden() {
+    public String preOrden() {
+        String m="";
         if (valor != null) {
+            
+            m+=valor.toString()+" ";
             System.out.println(valor);
             if (izdo != null) {
                 izdo.preOrden();
             }
             if (dcho != null) {
-                dcho.preOrden();
+                dcho.preOrden(); 
             }
 
         }
+        return m;
     }
 
     @Override
@@ -115,7 +119,7 @@ public class BST implements IBST<Empleado> {
             }
             System.out.println(valor);
             if (dcho != null) {
-                dcho.inOrden();
+                dcho.inOrden();//Añadir retorno de una cadena
             }
 
         }
@@ -130,7 +134,7 @@ public class BST implements IBST<Empleado> {
             if (dcho != null) {
                 dcho.postOrden();
             }
-            System.out.println(valor);
+            System.out.println(valor);//Añadir retorno de una cadena
         }
     }
 
