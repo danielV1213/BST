@@ -20,6 +20,7 @@ public class BST implements IBST<Empleado> {
 
     private BST padre;
 
+    
     public Empleado getValor() {
         return valor;
     }
