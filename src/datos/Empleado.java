@@ -1,21 +1,21 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Empleado: clase utilizada para declarar los atributos de tipo Empleado 
+    (objeto generico escogido para esta implementación), crear sus respectivos constructores, y metodos get y set.
+ * @author1 santiago.giraldo_car@uao.edu.co Santiago Giraldo 2170265
+ * @author2 juan_jose.jimenez@uao.edu.co Juan Jiménez 2195626
+ * @author3 juan_seb.orejuela@uao.edu.co Sebastián Orejuela 2195416
+ * @author4 daniel_andres.velez@uao.edu.co Daniel Vélez 2195145
+ * @date 16 abril 2021
+ * @version 1.0
+
  */
 package datos;
 
-import bst.Base;
-
-/**
- *
- * @author Daniel
- */
 public class Empleado implements Comparable<Empleado> {
 
     private int id;
 
-    private String nombre;  
+    private String nombre;
 
     private String puesto;
 
@@ -100,11 +100,24 @@ public class Empleado implements Comparable<Empleado> {
         this.id = id;
     }
 
+    /**
+     * toString.
+     *
+     * @param No recibe ningún parametro. // Este método se encarga de generar
+     * una cadena de texto con todos los atributos de clase.
+     * @return Cadena de texto con atributos de clase Empleado.
+     */
     @Override
     public String toString() {
         return "Datos: " + "id: " + id + ", nombre: " + nombre + ", puesto: " + puesto + ", despacho: " + despacho;
     }
 
+    /**
+     * compareTo.
+     *
+     * @param empl. // Este método se encarga de comparar los id de Empleado.
+     * @return Retorna un entero (0, -1, 1).
+     */
     @Override
     public int compareTo(Empleado empl) {
         if (id == empl.id) {

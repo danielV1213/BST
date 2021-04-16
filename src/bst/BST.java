@@ -1,17 +1,19 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Clase BST: clase utilizada para implementar los metodos del Arbol Binario de Búsqueda (Binary Search Tree)
+    de tipo Empleado (objeto generico escogido para esta implementación) que harán parte de la libreria BST.
+ * @author1 santiago.giraldo_car@uao.edu.co Santiago Giraldo 2170265
+ * @author2 juan_jose.jimenez@uao.edu.co Juan Jiménez 2195626
+ * @author3 juan_seb.orejuela@uao.edu.co Sebastián Orejuela 2195416
+ * @author4 daniel_andres.velez@uao.edu.co Daniel Vélez 2195145
+ * @date 16 abril 2021
+ * @version 1.0
+
  */
 package bst; //BINARY SEARCH TREE (ÁRBOL BINARIO DE BÚSQUEDA)
 
 import datos.Empleado;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Daniel
- */
 public class BST implements IBST<Empleado> {
 
     private Empleado valor;
@@ -20,21 +22,47 @@ public class BST implements IBST<Empleado> {
 
     private BST padre;
 
-    
+    /**
+     * getValor.
+     *
+     * @param No recibe nada. // Este método se encarga de obtener el valor de
+     * Empleado.
+     * @return Retorna valor.
+     */
     public Empleado getValor() {
         return valor;
     }
 
+    /**
+     * esVacio.
+     *
+     * @param No recibe nada. // Este método se encarga verificar si esta vacio.
+     * @return Retorna valor.
+     */
     @Override
     public boolean esVacio() {
         return valor == null;
     }
 
+    /**
+     * esHoja.
+     *
+     * @param No recibe nada. // Este método se encarga de verificar si un
+     * objeto es hoja.
+     * @return Retorna valor.
+     */
     @Override
     public boolean esHoja() {
         return valor != null && izdo == null && dcho == null;
     }
 
+    /**
+     * insertarImpl
+     *
+     * @param empl, padre. // Este método se encarga de insertar un objeto tipo
+     * empleado a una rama del arbol.
+     * @return Retorna nada.
+     */
     public void insertarImpl(Empleado empl, BST padre) {
         if (valor == null) {
             this.valor = empl;
@@ -57,11 +85,25 @@ public class BST implements IBST<Empleado> {
         }
     }
 
+    /**
+     * insertar.
+     *
+     * @param empl. // Este método se encarga insertar un objeto tipo empleado a
+     * la raiz.
+     * @return No retorna nada.
+     */
     @Override
     public void insertar(Empleado empl) {
         insertarImpl(empl, null); //Estamos insertando al árbol raíz.
     }
 
+    /**
+     * existe.
+     *
+     * @param id. // Este método se encarga verificar la existencia de un objeto
+     * tipo empleado buscandolo por su id.
+     * @return Retorna un booleano.
+     */
     @Override
     public boolean existe(int id) {
         if (valor != null) {
@@ -80,6 +122,13 @@ public class BST implements IBST<Empleado> {
         }
     }
 
+    /**
+     * obtener.
+     *
+     * @param id. // Este método se encarga de obtener el id del objeto tipo
+     * Empleado.
+     * @return Retorna un valor.
+     */
     @Override
     public Empleado obtener(int id) {
         if (valor != null) {
@@ -98,6 +147,13 @@ public class BST implements IBST<Empleado> {
         }
     }
 
+    /**
+     * preOrden.
+     *
+     * @param No recibe nada. // Este método se encarga de recorrer el arbol de
+     * tipo empleado de la forma PreOrden.
+     * @return Retorna m.
+     */
     @Override
     public String preOrden() {
         String m = "";
@@ -120,6 +176,13 @@ public class BST implements IBST<Empleado> {
         return m;
     }
 
+    /**
+     * inOrde.
+     *
+     * @param No recibe nada. // Este método se encarga de recorrer el arbol de
+     * tipo empleado de la forma inOrden.
+     * @return Retorna m.
+     */
     @Override
     public String inOrden() {
         String m = "";
@@ -141,6 +204,13 @@ public class BST implements IBST<Empleado> {
         return m;
     }
 
+    /**
+     * postOrden.
+     *
+     * @param No recibe nada. // Este método se encarga de recorrer el arbol de
+     * tipo empleado de la forma PostOrden.
+     * @return Retorna m.
+     */
     @Override
     public String postOrden() {
         String m = "";
@@ -161,6 +231,13 @@ public class BST implements IBST<Empleado> {
         return m;
     }
 
+    /**
+     * minimo.
+     *
+     * @param No recibe nada. // Este método se encarga de retornar el valor
+     * minimo.
+     * @return Retorna valor minimo.
+     */
     private BST minimo() {
         if (izdo != null && !izdo.esVacio()) {
             return izdo.minimo();
@@ -169,6 +246,13 @@ public class BST implements IBST<Empleado> {
         }
     }
 
+    /**
+     * eliminarImpl.
+     *
+     * @param id. // Este método se encarga de recorrer el arbol, buscando un id
+     * deseado por el usuario.
+     * @return Retorna un null.
+     */
     private void eliminarImpl(int id) {
         if (izdo != null && dcho != null) {
             //Eliminar con 2 hijos.
@@ -196,6 +280,13 @@ public class BST implements IBST<Empleado> {
         }
     }
 
+    /**
+     * eliminar.
+     *
+     * @param id. // Este método se encarga de eliminar un objeto de tipo
+     * empleado por su id.
+     * @return No retorna nada.
+     */
     @Override
     public void eliminar(int id) {
         if (valor != null) {
